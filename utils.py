@@ -47,3 +47,40 @@ def edits1(word):
 def edits2(word): 
     "All edits that are two edits away from `word`."
     return (e2 for e1 in edits1(word) for e2 in edits1(e1))
+
+#########################################################
+##   Data below is used for narrative and politeness   ##
+#########################################################
+
+narrative = {'Money': 'money now broke week until time last \
+day when today tonight paid next first night after tomorrow \
+month while account before long Friday rent buy bank still \
+bills bills ago cash due due soon past never paycheck check \
+spent years poor till yesterday morning dollars financial \
+hour bill evening credit budget loan bucks deposit dollar \
+current payed'.split(),'Job':'work job paycheck unemployment\
+interview fired employment hired hire'.split(),'Student':'college\
+student school roommate studying university finals semester class\
+study project dorm tuition'.split(),'Family':'family mom wife parents\
+mother hus- band dad son daughter father parent mum'.split(),'Craving':'friend \
+girlfriend craving birthday boyfriend celebrate party game games movie\
+date drunk beer celebrating invited drinks crave wasted invite'.split()}
+
+polite_words = [
+    "please","thanks","thank you","think", "thought", "thinking", "almost",
+    "apparent", "apparently", "appear", "appeared", "appears", "approximately", "around",
+    "assume", "assumed", "certain amount", "certain extent", "certain level", "claim",
+    "claimed", "doubt", "doubtful", "essentially", "estimate",
+    "estimated", "feel", "felt", "frequently", "from our perspective", "generally", "guess",
+    "in general", "in most cases", "in most instances", "in our view", "indicate", "indicated",
+    "largely", "likely", "mainly", "may", "maybe", "might", "mostly", "often", "on the whole",
+    "ought", "perhaps", "plausible", "plausibly", "possible", "possibly", "postulate",
+    "postulated", "presumable", "probable", "probably", "relatively", "roughly", "seems",
+    "should", "sometimes", "somewhat", "suggest", "suggested", "suppose", "suspect", "tend to",
+    "tends to", "typical", "typically", "uncertain", "uncertainly", "unclear", "unclearly",
+    "unlikely", "usually", "broadly", "tended to", "presumably", "suggests",
+    "from this perspective", "from my perspective", "in my view", "in this view", "in our opinion",
+    "in my opinion", "to my knowledge", "fairly", "quite", "rather", "argue", "argues", "argued",
+    "claims", "feels", "indicates", "supposed", "supposes", "suspects", "postulates"
+]
+
