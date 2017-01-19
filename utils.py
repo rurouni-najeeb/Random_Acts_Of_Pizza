@@ -84,3 +84,32 @@ polite_words = [
     "claims", "feels", "indicates", "supposed", "supposes", "suspects", "postulates"
 ]
 
+#################################################################
+## All the functions below are used for Similarity calculation ##
+#################################################################
+
+def get_post_from_subreddit_by_user(self , author , subreddit):
+        import urllib2
+        from bs4 import BeautifulSoup
+        url_ = "https://www.reddit.com/search?q=author%3A"+ author + "+subreddit%3A" + subreddit
+        done = True
+        while done:
+            try:
+                request = urllib2.Request(url_)
+                response = urllib2.urlopen(request)
+                soup = BeautifulSoup(response, 'html.parser')
+                cnt = 0
+                har_ = set()
+                for a in soup.findAll('a' , href = True):
+                  try:
+                      if subreddit in a['href']:
+                          ls_ = a['href'].split('/')
+                          for i in ls_:
+                              if i.isalnum():
+                                  har_.add(i)
+                          cnt += 1
+                  except Exception as e :
+                    print str(e)
+                return len(har_)
+            except:
+                pass
