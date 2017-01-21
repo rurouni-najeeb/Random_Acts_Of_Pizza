@@ -16,7 +16,7 @@ def Flesch_reading_ease(total_words,total_sentences,total_sylabls):
 def words(text): 
     return re.findall(r'\w+', text.lower())
 
-WORDS = Counter(words(open('words.txt').read()))
+WORDS = Counter(words(open('data/words.txt').read()))
 
 def P(word, N=sum(WORDS.values())): 
     "Probability of `word`."
